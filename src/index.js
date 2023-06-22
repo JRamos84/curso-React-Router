@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import App from './routes/App';
-import reducers from './reducers';
+import reducer from './reducers';
 
 const initialState = {
   user: {},
@@ -173,9 +173,10 @@ const initialState = {
 };
 
 const store = configureStore({
-  reducer: reducers,
-  preloadedState: initialState,
-});
+    reducer: reducer,
+    preloadedState: initialState // Pasa el estado inicial como preloadedState
+  });
+  
 
 createRoot(document.getElementById('app')).render(
   <Provider store={store}>
