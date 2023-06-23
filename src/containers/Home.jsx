@@ -12,7 +12,7 @@ function Home() {
   const myList = useSelector((state) => state.myList);
   const trends = useSelector((state) => state.trends);
   const originals = useSelector((state) => state.originals);
-  console.log(trends);
+
 
   return (
     <div className="App">
@@ -21,7 +21,11 @@ function Home() {
         <Categories title="Mi Lista">
           <Carousel>
             {myList.map((item) => (
-              <CarouselItem key={item.id} {...item} />
+              <CarouselItem 
+              key={item.id}
+               {...item}
+               isList 
+               />
             ))}
           </Carousel>
         </Categories>
